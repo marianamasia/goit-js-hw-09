@@ -41,18 +41,10 @@ form.addEventListener('submit', event => {
 
   console.log(formData);
 
-  localStorage.setItem(
-    STORAGE_KEY,
-    JSON.stringify({
-      email: formData.email.trim(),
-      message: formData.message.trim(),
-    })
-  );
+  localStorage.removeItem(STORAGE_KEY);
 
-  //   localStorage.removeItem(STORAGE_KEY);
+  form.reset();
 
-  //   form.reset();
-
-  //   formData.email = '';
-  //   formData.message = '';
+  formData.email = '';
+  formData.message = '';
 });
